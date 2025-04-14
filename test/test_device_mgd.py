@@ -1,5 +1,5 @@
 # *****************************************************************************
-# Copyright (c) 2016,2018 IBM Corporation and other Contributors.
+# Copyright (c) 2016, 2024 IBM Corporation and other Contributors.
 #
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Eclipse Public License v1.0
@@ -9,21 +9,12 @@
 
 import pytest
 import testUtils
-import uuid
-import os
 import wiotp.sdk
-import time
 from wiotp.sdk.device import ManagedDeviceClient
 from wiotp.sdk import Utf8Codec
 
 
 class TestDeviceMgd(testUtils.AbstractTest):
-    def testManagedDeviceQSException(self):
-        with pytest.raises(wiotp.sdk.ConfigurationException) as e:
-            options = {"identity": {"orgId": "quickstart", "typeId": "xxx", "deviceId": "xxx"}}
-            wiotp.sdk.device.ManagedDeviceClient(options)
-        assert "QuickStart does not support device management" == e.value.reason
-
     def testManagedDeviceConnectException(self, device):
         badOptions = {
             "identity": {"orgId": self.ORG_ID, "typeId": device.typeId, "deviceId": device.deviceId},

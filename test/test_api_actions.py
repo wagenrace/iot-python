@@ -1,5 +1,5 @@
 # *****************************************************************************
-# Copyright (c) 2019 IBM Corporation and other Contributors.
+# Copyright (c) 2019, 2024 IBM Corporation and other Contributors.
 #
 # All rights reserved. This program and the accompanying materials
 # are made available under the terms of the Eclipse Public License v1.0
@@ -7,13 +7,9 @@
 # http://www.eclipse.org/legal/epl-v10.html
 # *****************************************************************************
 #
-import uuid
 from datetime import datetime
 import testUtils
 import time
-import pytest
-from wiotp.sdk.exceptions import ApiException
-import string
 import sys
 import json
 

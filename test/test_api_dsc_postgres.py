@@ -7,20 +7,15 @@
 # http://www.eclipse.org/legal/epl-v10.html
 # *****************************************************************************
 #
-import uuid
+
 from datetime import datetime
 import testUtils
-import time
 import pytest
-from wiotp.sdk.api.services import (
-    CloudantServiceBindingCredentials,
-    CloudantServiceBindingCreateRequest,
-    PostgresServiceBindingCredentials,
-)
+from wiotp.sdk.api.services import PostgresServiceBindingCredentials
 
 from wiotp.sdk.exceptions import ApiException
 
-
+@pytest.mark.skip(reason="We don't have a Postgres instance to test against")
 @testUtils.oneJobOnlyTest
 class TestDscPostgres(testUtils.AbstractTest):
     def checkPostgresService(self, service, name, description):

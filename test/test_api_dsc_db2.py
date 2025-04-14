@@ -7,19 +7,15 @@
 # http://www.eclipse.org/legal/epl-v10.html
 # *****************************************************************************
 #
-import uuid
+
 from datetime import datetime
 import testUtils
-import time
 import pytest
-from wiotp.sdk.api.services import (
-    CloudantServiceBindingCredentials,
-    CloudantServiceBindingCreateRequest,
-    DB2ServiceBindingCredentials,
-)
+from wiotp.sdk.api.services import DB2ServiceBindingCredentials
 from wiotp.sdk.exceptions import ApiException
 
 
+@pytest.mark.skip(reason="We don't have  Db2 instance to test against")
 @testUtils.oneJobOnlyTest
 class TestDscDb2(testUtils.AbstractTest):
     def checkDB2Service(self, service, name, description):
